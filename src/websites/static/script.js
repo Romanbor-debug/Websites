@@ -34,6 +34,7 @@ $(document).ready(function(){
     });
 
     $('#42').on('submit', function(e){
+        
         e.preventDefault();
 
  
@@ -48,7 +49,8 @@ $(document).ready(function(){
         }).done(function(data){
                 if (data.status === 'success') {
                     // Успешная регистрация — на страницу входа
-                    window.location.href = "/register";
+                    alert(data.message)
+                    window.location.href = "/login";
                 } else {
                     // Email уже существует — тоже на страницу входа
                     alert(data.message);

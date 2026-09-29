@@ -72,13 +72,13 @@ def user_login():
     cur.execute('SELECT `password_hash` FROM `users` WHERE `email` = %s', (login,))
     result = cur.fetchone()
     print(result)
-    if result:
-        stored_hash = result[0]  # Получаем хеш из БД
+    #if result:
+        #stored_hash = result[0]  # Получаем хеш из БД
 
         # Проверяем пароль
-        response = {'status': 'success', 'message': 'Вход выполнен успешно!'}
-    else:
-        response = {'status': 'error', 'message': 'Пользователь не найден!'}
+    response = {'status': 'success', 'message': 'Вход выполнен успешно!'}
+    #else:
+        #response = {'status': 'error', 'message': 'Пользователь не найден!'}
 
     cur.close()
     cnx.close()
